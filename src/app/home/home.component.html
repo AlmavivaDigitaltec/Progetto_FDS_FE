@@ -1,0 +1,10 @@
+<h1>Hi {{currentUser.nome}}!</h1>
+<p>You're logged in with Angular 6!!</p>
+<h3>All registered users:</h3>
+<ul>
+        <li *ngFor="let user of users">
+        {{currentUser.matricola}} ({{currentUser.nome}} {{currentUser.cognome}})
+        <a (click)="deleteUser(user.matricola)" class="text-danger">Delete</a> 
+    </li> 
+</ul>
+<p><a [routerLink]="['/login']">Logout</a></p> 

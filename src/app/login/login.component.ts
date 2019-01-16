@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
-    returnUrl: string;
+    //returnUrl: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
     // convenience getter for easy access to form fields
@@ -49,15 +49,24 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    if(JSON.parse(localStorage.getItem('currentUser')).matricola == '000')
+                    if(data == null)
                     {
-                        this.router.navigateByUrl('/adminHome');
-                        //this.router.navigate([this.returnUrl]);
+                        this.loginForm = this.formBuilder.group({
+                            mail: ['', Validators.required],
+                            password: ['', Validators.required]
+                        });
+                    }
+                    else if(JSON.parse(localStorage.getItem('currentUser')).matricola == '000')
+                    {
+                        //this.router.navigateByUrl('/adminHome');
+                        alert('############' + '\n' + "#    ADMIN    #" + "\n" + '############');
+                        this.router.navigate(['/adminHome']);
                     }
                     else
                     {
                         //this.router.navigate([this.returnUrl]);
-                        this.router.navigateByUrl('/userHome');
+                        alert('Utente loggato');
+                        this.router.navigate(['/userHome']);
                     }                    
                 },
                 error => {

@@ -1,31 +1,47 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
-
 import { User } from '../_models';
 import { UserService } from '../_services';
+import { Prenotazione } from "../_models/Prenotazione";
+import { PrenotazioneService } from '../_services/prenotazione.service';
+import { Observable } from 'rxjs';
 
-@Component({templateUrl: 'home.component.html'})
+@Component({
+    templateUrl: 'home.component.html'
+})
 export class HomeComponent implements OnInit {
     currentUser: User;
-    users: User[] = [];
+    prenotazioni: Prenotazione[];
+    //prenotazioni: Observable<Prenotazione[]>;
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private prenotazioneService: PrenotazioneService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
 
      ngOnInit() {
-         //this.loadAllUsers();
-     }
-
-    deleteUser(matricola: string) {
-        this.userService.delete(matricola).pipe(first()).subscribe(() => { 
-            this.loadAllUsers()
-        });
+         this.loadAllPrenotazioni();
     }
 
-    private loadAllUsers() {
-        this.userService.getAll().pipe(first()).subscribe(users => {
-            this.users = users;
+    deleteUser(matricola: string) {
+        //this.userService.delete(matricola).pipe(first()).subscribe(() => { 
+            //this.loadAllUsers()
+        //});
+    }
+
+    private loadAllPrenotazioni() {
+        /*
+        this.prenotazioneService.getAll().pipe(first()).subscribe(pren => {
+            alert('prenotazioni caricate');
+            this.prenotazioni = pren;
         });
+        */
+       this.prenotazioneService.getAll().subscribe(pren => {
+           this.prenotazioni = pren;
+       });
+    }
+
+    private deleteAllPrenotazioni()
+    {
+        alert('prenotazioni cancellate');
     }
 }

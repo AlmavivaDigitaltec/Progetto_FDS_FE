@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { stringify } from 'querystring';
 
 @Injectable()
 export class AuthenticationService {
@@ -25,18 +24,12 @@ export class AuthenticationService {
                 // login successful if there's a jwt token in the response
                 if (user) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser',JSON.stringify(user));
-                    
-                    if(user.matricola=='000')
-                    {
-                        alert('############' + '\n' + "#    ADMIN    #" + "\n" + '############');
-                    }
-                    else
-                        alert('Utente loggato: ' + user.nome + ' ' + user.cognome);
+                    localStorage.setItem('currentUser',JSON.stringify(user));                        
                 }
                 else {
-                  alert('utente non registrato');
-                  window.location.reload();
+                  //alert('utente non registrato');
+                  //window.location.reload();
+                  return null;
                 }
 
                 return user;

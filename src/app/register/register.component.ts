@@ -19,11 +19,10 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            nome: [''],
-            cognome: [''],
-            email: [''],
-            password: ['', [Validators.minLength(6)]],
-            matricola: ['']
+            firstName: ['', Validators.required],
+            lastName: ['', Validators.required],
+            username: ['', Validators.required],
+            password: ['', [Validators.required, Validators.minLength(6)]]
         });
     }
 
@@ -34,20 +33,20 @@ export class RegisterComponent implements OnInit {
         this.submitted = true;
 
         // stop here if form is invalid
-       // if (this.registerForm.invalid) {
-        //    return;
-        //}
+        if (this.registerForm.invalid) {
+            return;
+        }
 
         this.loading = true;
-        this.userService.register(this.f.nome.value, this.f.cognome.value, this.f.mail.value,
-            this.f.password.value, this.f.matricola.value).subscribe(
-                res => {
-                    this.alertService.success('Registrazione effettuata', true);
-                    this.loading = false;
+        this.userService.register(this.registerForm.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.alertService.success('Registration successful', true);
                     this.router.navigate(['/login']);
                 },
                 error => {
-                    this.alertService.error('error');
+                    this.alertService.error(error);
                     this.loading = false;
                 });
     }

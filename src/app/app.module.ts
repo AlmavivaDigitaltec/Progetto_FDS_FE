@@ -15,8 +15,11 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { RegisterComponent } from './register';;
-import { AdminHomeComponent } from './admin-home/admin-home.component'
+import { RegisterComponent } from './register';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { DettagliPrenotazioniComponent } from './home/dettagli-prenotazioni/dettagli-prenotazioni.component';
+import { PrenotazioneService } from './_services/prenotazione.service';
+import { DettagliUtenteComponent } from './admin-home/dettagli-utente/dettagli-utente.component';
 
 @NgModule({
     imports: [
@@ -29,14 +32,17 @@ import { AdminHomeComponent } from './admin-home/admin-home.component'
         AppComponent,
         AlertComponent,
         HomeComponent,
-        AdminHomeComponent,
         LoginComponent,
         RegisterComponent,
-        AdminHomeComponent    ],
+        AdminHomeComponent ,
+        DettagliPrenotazioniComponent ,
+        DettagliUtenteComponent  
+    ],
     providers: [
         AuthGuard,
         AlertService,
         AuthenticationService,
+        PrenotazioneService,
         UserService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

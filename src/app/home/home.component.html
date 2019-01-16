@@ -1,10 +1,39 @@
 <h1>Hi {{currentUser.nome}}!</h1>
-<p>You're logged in with Angular 6!!</p>
-<h3>All registered users:</h3>
+<p>Gestisci le tue Prenotazioni</p>
+<h3>Prenotazioni:</h3>
+
+<!--
 <ul>
         <li *ngFor="let user of users">
         {{currentUser.matricola}} ({{currentUser.nome}} {{currentUser.cognome}})
         <a (click)="deleteUser(user.matricola)" class="text-danger">Delete</a> 
     </li> 
 </ul>
+<div *ngFor="let user of users | async" style="width: 300px;">
+    <customer-details [customer]='customer'></customer-details>
+</div>
+-->
+
+<table>
+    <thead>
+        <tr>                
+            <th>ID Prenotazione</th>
+            <th>MAtricola Utente</th>
+            <th>Codice Prenotabile</th>
+            <th>Data Prenotazione</th>
+            <th>Ora Inizio</th>
+            <th>Ora Fine</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr app-dettagli-prenotazioni *ngFor="let p of prenotazioni" [prenotazione]='p'></tr>
+    </tbody>
+    
+</table>
+   
+<div>
+    <button type="button" class="button btn-danger" (click)='deleteAllPrenotazioni()'>Cancella Tutto</button>
+</div>
+
 <p><a [routerLink]="['/login']">Logout</a></p> 

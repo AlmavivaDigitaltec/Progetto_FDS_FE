@@ -1,2 +1,23 @@
-<p>admin-home works!</p>
+<h1>* Bentornato Amministratore *</h1>
+
+<h3>Lista Utenti</h3>
+<button class="btn btn-success">Aggiungi Utente</button>
+<table>
+    <thead>
+        <tr>                
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Matricola</th>
+            <th>modifica</th>
+            <th>elimina</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'></tr>
+    </tbody>    
+</table>
+
 <p><a [routerLink]="['/login']">Logout</a></p> 

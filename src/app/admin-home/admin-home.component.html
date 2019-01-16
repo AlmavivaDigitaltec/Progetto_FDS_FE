@@ -16,7 +16,8 @@
     </thead>
     
     <tbody>
-        <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'></tr>
+        <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'
+            (onDeleteUser) = "onDeleteUser($event)"></tr>
     </tbody>    
 </table>
 

@@ -26,8 +26,12 @@ export class UserService {
     update(user: User) {
         return this.http.put(`${environment.apiUrl}/users/` + user.matricola, user);
     }
-
+/*
     delete(matricola: string) {
         return this.http.delete(`${environment.apiUrl}/users/` + matricola);
+    }
+*/
+    delete(utente: User) {
+        return this.http.delete(this.url + '/admin/cancellaUtenteMatricola');
     }
 }

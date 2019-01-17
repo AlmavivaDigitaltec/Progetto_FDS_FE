@@ -6,27 +6,6 @@
     <!--<a routerLink="prenotazioni" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotazioni</a>-->
 </nav>
 
-<router-outlet name="sub"></router-outlet>
-
-<h3>Lista Utenti</h3>
-<button class="btn btn-success">Aggiungi Utente</button>
-<table>
-    <thead>
-        <tr>        
-            <th>Matricola</th>        
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>Email</th>
-            <th>Password</th>            
-            <th>modifica</th>
-            <th>elimina</th>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'
-            (onDeleteUser) = "onDeleteUser($event)"></tr>
-    </tbody>    
-</table>
+<router-outlet></router-outlet>
 
 <p><a [routerLink]="['/login']">Logout</a></p> 

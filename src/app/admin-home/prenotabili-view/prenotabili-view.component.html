@@ -15,9 +15,6 @@
     </thead>
     
     <tbody>
-        <tr app-dettagli-utente *ngFor="let p of listaUtenti" [utente]='p'
-            (onDeleteUser) = "onDeleteUser($event)"></tr>
+        <tr app-dettagli-prenotabile *ngFor="let p of listaPrenotabili" [prenotabile]='p'></tr>
     </tbody>    
 </table>
-
-<p><a [routerLink]="['/login']">Logout</a></p> 

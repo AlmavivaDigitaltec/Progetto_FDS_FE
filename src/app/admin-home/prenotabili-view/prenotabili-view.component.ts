@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Prenotabile } from 'src/app/_models/prenotabile';
+import { PrenotabileService } from 'src/app/_services/prenotabile.service';
 
 @Component({
-  selector: 'app-prenotabili-view, [app-prenotabili-view]',
+  selector: 'app-prenotabili-view',
   templateUrl: './prenotabili-view.component.html',
   styleUrls: ['./prenotabili-view.component.css']
 })
@@ -11,14 +12,15 @@ export class PrenotabiliViewComponent implements OnInit {
   prenotabile: Prenotabile;
   listaPrenotabili: Prenotabile[];
 
-  constructor() { }
+  constructor(private prenotabileService: PrenotabileService) { }
 
   ngOnInit() {
-    this.loadAllPrenotazioni();
+    this.loadAllPrenotabili();
   }
 
-  private loadAllPrenotazioni() {
-
+  private loadAllPrenotabili() {
+      this.prenotabileService.getAll().subscribe(pren => {
+      this.listaPrenotabili = pren;
+    });
   }
-
 }

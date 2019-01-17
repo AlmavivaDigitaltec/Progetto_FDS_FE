@@ -24,6 +24,7 @@ import { UserViewComponent } from './admin-home/user-view/user-view.component';;
 import { PrenotabiliViewComponent } from './admin-home/prenotabili-view/prenotabili-view.component'
 ;
 import { DettagliPrenotabileComponent } from './admin-home/prenotabili-view/dettagli-prenotabile/dettagli-prenotabile.component'
+import { PrenotabileService } from './_services/prenotabile.service';
 @NgModule({
     imports: [
         BrowserModule,
@@ -50,6 +51,7 @@ import { DettagliPrenotabileComponent } from './admin-home/prenotabili-view/dett
         AuthenticationService,
         PrenotazioneService,
         UserService,
+        PrenotabileService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

@@ -9,24 +9,9 @@ import { UserService } from '../_services';
 })
 export class AdminHomeComponent implements OnInit {
 
-  currentUser: User;
-  listaUtenti: User[];
-
-  constructor(private userService: UserService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  constructor() {
 }
 
   ngOnInit() {
-    this.loadAllUsers();
   }
-
-  private loadAllUsers() {
-    this.userService.getAll().subscribe(utenti => {
-      this.listaUtenti = utenti;
-    });
-  }
-
-  
-
-
 }

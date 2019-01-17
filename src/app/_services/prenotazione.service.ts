@@ -12,7 +12,7 @@ export class PrenotazioneService {
 
   constructor(private http: HttpClient) { }
 
-  public getAll() {
+  getAll() {
     return this.http.get<Prenotazione[]>(this.url + '/admin/vediTuttePrenotazioni');
   }
 }

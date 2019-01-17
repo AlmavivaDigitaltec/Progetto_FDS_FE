@@ -20,13 +20,14 @@ export class UserService {
     }
 
     register(user: User) {
-        return this.http.post(`${environment.apiUrl}/users/register`, user);
+        const body = { matricola: user.matricola, nome: user.nome, cognome: user.cognome, mail: user.mail, password: user.password }
+        return this.http.post(`${this.url}/utente/inserisci`, body);
     }
-
+/*
     update(user: User) {
         return this.http.put(`${environment.apiUrl}/users/` + user.matricola, user);
     }
-/*
+
     delete(matricola: string) {
         return this.http.delete(`${environment.apiUrl}/users/` + matricola);
     }

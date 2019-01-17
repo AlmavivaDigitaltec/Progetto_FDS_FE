@@ -1,4 +1,4 @@
-﻿import { Routes, RouterModule } from '@angular/router';
+﻿import { Routes, RouterModule, Router } from '@angular/router';
 
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
@@ -7,6 +7,7 @@ import { AuthGuard } from './_guards';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { UserViewComponent } from './admin-home/user-view/user-view.component';
 import { PrenotabiliViewComponent } from './admin-home/prenotabili-view/prenotabili-view.component';
+import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -15,8 +16,8 @@ const appRoutes: Routes = [
       path: 'adminHome', 
       component: AdminHomeComponent, 
       children: [
-        { path: 'utenti', outlet: 'sub', component: UserViewComponent },
-        { path: 'prenotabili', outlet: 'sub', component: PrenotabiliViewComponent }
+        { path: 'utenti', component: UserViewComponent },
+        { path: 'prenotabili', component: PrenotabiliViewComponent }
         //{ path: 'prenotazioni', component: UserViewComponent }
       ]
     },

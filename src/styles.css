@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+table{
+    border: 3px solid black;
+}
+
+th{
+    background-color: cyan;
+    color: black;
+}
+
+td {
+    min-width: 7rem;
+    background-color: blueviolet;
+    border: 1px solid black;
+    text-align: center;
+}

@@ -20,8 +20,10 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { DettagliPrenotazioniComponent } from './home/dettagli-prenotazioni/dettagli-prenotazioni.component';
 import { PrenotazioneService } from './_services/prenotazione.service';
 import { DettagliUtenteComponent } from './admin-home/dettagli-utente/dettagli-utente.component';
-import { UserViewComponent } from './admin-home/user-view/user-view.component';
-
+import { UserViewComponent } from './admin-home/user-view/user-view.component';;
+import { PrenotabiliViewComponent } from './admin-home/prenotabili-view/prenotabili-view.component'
+;
+import { DettagliPrenotabileComponent } from './admin-home/prenotabili-view/dettagli-prenotabile/dettagli-prenotabile.component'
 @NgModule({
     imports: [
         BrowserModule,
@@ -38,8 +40,10 @@ import { UserViewComponent } from './admin-home/user-view/user-view.component';
         AdminHomeComponent ,
         DettagliPrenotazioniComponent ,
         DettagliUtenteComponent ,
-        UserViewComponent 
-    ],
+        UserViewComponent ,
+        PrenotabiliViewComponent
+,
+        DettagliPrenotabileComponent    ],
     providers: [
         AuthGuard,
         AlertService,

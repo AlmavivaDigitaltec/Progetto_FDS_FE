@@ -18,9 +18,10 @@ export class AuthenticationService {
                 return user;
             }));*/
 
-            const body = { nome: '', cognome: '', mail: mail, password: password, matricola: ''};
+            //const body = { nome: '', cognome: '', mail: mail, password: password, matricola: ''};
 
-            return this.http.post<any>('http://localhost:8080/utente/login',body).pipe(map(user => {
+            const url = 'http://localhost:8080/utente/login';
+            return this.http.get<any>(`${url}/${mail}/${password}`).pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes

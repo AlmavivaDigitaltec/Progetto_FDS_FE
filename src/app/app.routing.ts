@@ -20,9 +20,9 @@ const appRoutes: Routes = [
         //{ path: 'prenotazioni', component: UserViewComponent }
       ]
     },
-    { path: 'adminHome/utenti', component: UserViewComponent },
+    //{ path: 'adminHome/utenti', component: UserViewComponent },
     //{ path: 'adminHome/utenti/update/:id', component: UserViewComponent },
-    { path: 'adminHome/prenotabili', component: PrenotabiliViewComponent },
+    //{ path: 'adminHome/prenotabili', component: PrenotabiliViewComponent },
     //{ path: 'adminHome/prenotazioni', component: UserViewComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },

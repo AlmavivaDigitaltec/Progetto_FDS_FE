@@ -32,6 +32,7 @@ export class UserService {
     }
 */
     delete(utente: User) {
-        return this.http.delete(this.url + '/admin/cancellaUtenteMatricola');
+        alert(JSON.stringify(utente));
+        return this.http.post(this.url + '/admin/cancellaUtenteMatricola', JSON.stringify(utente));
     }
 }

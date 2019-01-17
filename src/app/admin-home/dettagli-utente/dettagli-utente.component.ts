@@ -23,7 +23,8 @@ export class DettagliUtenteComponent implements OnInit {
 
   deleteUser() {
     alert(this.utente.nome);
-  // this.userDeleted.emit(this.utente);
+    //this.userDeleted.emit(this.utente);
+    this.userService.delete(this.utente);
   }
 
 }

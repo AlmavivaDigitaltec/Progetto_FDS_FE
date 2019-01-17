@@ -1,12 +1,12 @@
 <h1>* Bentornato Amministratore *</h1>
 
 <nav>
-    <a routerLink="adminHome/utenti" class="btn btn-primary active" role="button" routerLinkActive="active">Utenti</a>
-    <a routerLink="adminHome/prenotabili" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotabili</a>
-    <a routerLink="adminHome/prenotazioni" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotazioni</a>
+    <a [routerLink]="['utenti']" class="btn btn-primary active" role="button" routerLinkActive="active">Utenti</a>
+    <a [routerLink]="['prenotabili']" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotabili</a>
+    <!--<a routerLink="prenotazioni" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotazioni</a>-->
 </nav>
 
-<router-outlet></router-outlet>
+<router-outlet name="sub"></router-outlet>
 
 <h3>Lista Utenti</h3>
 <button class="btn btn-success">Aggiungi Utente</button>

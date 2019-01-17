@@ -1,3 +1,12 @@
-<p>
-  dettagli-prenotabile works!
-</p>
+<td>{{prenotabile.codice}}</td>
+<td>{{prenotabile.nome}}</td>
+<td>{{prenotabile.data_inizio}}</td>
+<td>{{prenotabile.data_fine}}</td>
+<td>{{prenotabile.ora_inizio}}</td>
+<td>{{prenotabile.ora_fine}}</td>
+<td>
+    <button class="btn-primary" (click)='updatePrenotabile()'>Mod</button>
+</td>
+<td>
+    <button class="btn-success" (click)='deletePrenotabile(p)'>Del</button>
+</td>

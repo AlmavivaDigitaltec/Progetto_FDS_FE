@@ -15,20 +15,17 @@ const appRoutes: Routes = [
       path: 'adminHome', 
       component: AdminHomeComponent, 
       children: [
-        { path: 'utenti', component: UserViewComponent },
-        { path: 'prenotabili', component: PrenotabiliViewComponent }
+        { path: 'utenti', outlet: 'sub', component: UserViewComponent },
+        { path: 'prenotabili', outlet: 'sub', component: PrenotabiliViewComponent }
         //{ path: 'prenotazioni', component: UserViewComponent }
       ]
     },
-    //{ path: 'adminHome/utenti', component: UserViewComponent },
     //{ path: 'adminHome/utenti/update/:id', component: UserViewComponent },
-    //{ path: 'adminHome/prenotabili', component: PrenotabiliViewComponent },
-    //{ path: 'adminHome/prenotazioni', component: UserViewComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
 
     // otherwise redirect to home
-  //  { path: '**', redirectTo: '' }
+    //{ path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

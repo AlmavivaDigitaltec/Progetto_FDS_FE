@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Prenotabile } from 'src/app/_models/prenotabile';
 
 @Component({
   selector: 'app-dettagli-prenotabile',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DettagliPrenotabileComponent implements OnInit {
 
+  @Input() prenotabile: Prenotabile;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  updatePrenotabile() {
+
+  }
+
+  deletePrenotabile() {
+    
   }
 
 }

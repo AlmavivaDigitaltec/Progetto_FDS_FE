@@ -1,11 +1,11 @@
-<h1>* Bentornato Amministratore *</h1>
-
-<nav>
+<div style="font-family: Tahoma; padding: 10px">
+    <h2 style="font-family: Tahoma">Bentornato Amministratore</h2>
     <a [routerLink]="['utenti']" class="btn btn-primary active" role="button" routerLinkActive="active">Utenti</a>
     <a [routerLink]="['prenotabili']" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotabili</a>
     <!--<a routerLink="prenotazioni" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotazioni</a>-->
-</nav>
+</div>
 
 <router-outlet></router-outlet>
-
-<p><a [routerLink]="['/login']">Logout</a></p> 
+<div style="font-family: Tahoma; padding: 10px">
+<a [routerLink]="['/login']" class="btn btn-danger" role="button" routerLinkActive="active">Logout</a>
+</div>

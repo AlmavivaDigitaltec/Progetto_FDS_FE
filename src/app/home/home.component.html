@@ -1,6 +1,6 @@
-<h1>Hi {{currentUser.nome}}!</h1>
-<p>Gestisci le tue Prenotazioni</p>
-<h3>Prenotazioni:</h3>
+<h1 style="font-family: Tahoma">Ciao {{currentUser.nome}}!</h1>
+<p style="font-family: Tahoma">Gestisci le tue Prenotazioni</p>
+<h3 style="font-family: Tahoma">Prenotazioni:</h3>
 
 <!--
 <ul>
@@ -14,11 +14,11 @@
 </div>
 -->
 
-<table>
-    <thead>
+<table style="font-family: Tahoma">
+    <thead class="text-center">
         <tr>                
             <th>ID Prenotazione</th>
-            <th>MAtricola Utente</th>
+            <th>Matricola Utente</th>
             <th>Codice Prenotabile</th>
             <th>Data Prenotazione</th>
             <th>Ora Inizio</th>
@@ -26,7 +26,7 @@
         </tr>
     </thead>
     
-    <tbody>
+    <tbody class="text-center">
         <tr app-dettagli-prenotazioni *ngFor="let p of prenotazioni" [prenotazione]='p'></tr>
     </tbody>
     

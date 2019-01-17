@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { User } from 'src/app/_models';
-import { UserService } from 'src/app/_services';
+import { User } from '../../_models';
+import { UserService } from '../../_services';
+
 
 @Component({
   selector: 'app-dettagli-utente, [app-dettagli-utente]',

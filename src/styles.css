@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+.jumbotron{
+    
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background-size: contain;
+}
+
+.container{
+    padding-top: 0%;
+}
 table{
+    
     border: 3px solid black;
 }
 
@@ -9,7 +22,7 @@ th{
 }
 
 td {
-    min-width: 7rem;
+    min-width: 6rem;
     background-color: blueviolet;
     border: 1px solid black;
     text-align: center;

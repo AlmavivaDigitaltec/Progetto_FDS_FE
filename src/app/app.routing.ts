@@ -9,6 +9,7 @@ import { UserViewComponent } from './admin-home/user-view/user-view.component';
 import { PrenotabiliViewComponent } from './admin-home/prenotabili-view/prenotabili-view.component';
 import { NgModule } from '@angular/core';
 
+
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'userHome', component: HomeComponent, canActivate: [AuthGuard] },

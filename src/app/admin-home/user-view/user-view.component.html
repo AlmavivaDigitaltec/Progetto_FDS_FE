@@ -1,25 +1,23 @@
-<div style="font-family: Tahoma; padding: 10px">
+<div style="font-family: Tahoma; padding: 10px;  overflow-x:auto;">
     <h3>Lista Utenti</h3>
-<div style="margin-bottom: 10px">
-    <button class="btn btn-success">Aggiungi Utente</button>
-</div>
-    <table class="text-center">
-    <thead>
-        <tr>        
-            <th>Matricola</th>        
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>Email</th>
-            <th>Password</th>            
-            <th>modifica</th>
-            <th>elimina</th>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'
-            (onDeleteUser) = "onDeleteUser($event)"></tr>
-    </tbody>    
-</table>
-
-</div>
+    <div style="margin-bottom: 10px">
+       <button class="btn btn-success">Aggiungi Utente</button>
+    </div>
+    <table class="text-center" >
+       <thead>
+          <tr>
+             <th>Matricola</th>
+             <th>Nome</th>
+             <th>Cognome</th>
+             <th>Email</th>
+             <th>Password</th>
+             <th>modifica</th>
+             <th>elimina</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'
+          (onDeleteUser) = "onDeleteUser($event)"></tr>
+       </tbody>
+    </table>
+ </div>

@@ -7,6 +7,7 @@ import { PrenotazioneService } from '../_services/prenotazione.service';
 import { Observable } from 'rxjs';
 
 @Component({
+    selector: 'home-component',
     templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit {

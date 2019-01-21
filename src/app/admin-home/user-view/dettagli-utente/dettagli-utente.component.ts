@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { User } from '../../_models';
-import { UserService } from '../../_services';
-
+import { User } from 'src/app/_models';
+import { UserService } from 'src/app/_services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dettagli-utente, [app-dettagli-utente]',
@@ -10,22 +10,23 @@ import { UserService } from '../../_services';
 })
 export class DettagliUtenteComponent implements OnInit {
 
-  @Input() utente: User;
+  @Input() user: User;
   //@Output() userDeleted = new EventEmitter();
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
 
   updateUser() {
+    alert(this.user.nome);
+    this.router.navigate(['adminHome/utenti/update', JSON.stringify(this.user)]);
 
   }
 
   deleteUser() {
-    alert(this.utente.nome);
-    //this.userDeleted.emit(this.utente);
-    this.userService.delete(this.utente);
+    alert(this.user.nome);
+    this.userService.delete(this.user);
   }
 
 }

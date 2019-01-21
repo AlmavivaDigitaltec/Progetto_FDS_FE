@@ -1,5 +1,8 @@
 <h3>Lista Prenotabili</h3>
-<button class="btn btn-success">Aggiungi Prenotabile</button>
+<button [routerLink]="['create']" class="btn btn-success" style="margin-bottom: 1.3em">Aggiungi Prenotabile</button>
+
+<router-outlet></router-outlet>
+
 <table class="text-center">
     <thead>
         <tr>        

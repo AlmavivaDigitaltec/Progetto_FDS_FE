@@ -1,11 +1,21 @@
 <div style="font-family: Tahoma; padding: 10px">
     <h2 style="font-family: Tahoma">Bentornato Amministratore</h2>
-    <a [routerLink]="['utenti']" class="btn btn-primary active" role="button" routerLinkActive="active">Utenti</a>
-    <a [routerLink]="['prenotabili']" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotabili</a>
-    <!--<a routerLink="prenotazioni" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotazioni</a>-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style=" float: left">
+                    <a [routerLink]="['utenti']" class="btn btn-primary active" style ="margin-right: 1em;" role="button" routerLinkActive="active">Utenti</a>
+                    <a [routerLink]="['prenotabili']" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotabili</a>
+					<a [routerLink]="['prenotazioni']" class="btn btn-primary active" role="button" routerLinkActive="active">Prenotazioni</a>
+            </div>
+            <div class="col-sm-6"></div>             
+        </div>
+    </div>
+    
 </div>
 
 <router-outlet></router-outlet>
+
 <div style="font-family: Tahoma; padding: 10px">
 <a [routerLink]="['/login']" class="btn btn-danger" role="button" routerLinkActive="active">Logout</a>
 </div>

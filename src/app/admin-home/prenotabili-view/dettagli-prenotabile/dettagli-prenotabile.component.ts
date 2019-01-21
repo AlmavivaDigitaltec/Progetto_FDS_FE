@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Prenotabile } from '../../../_models/prenotabile';
+import { Prenotabile } from 'src/app/_models/prenotabile';
 
 @Component({
   selector: 'app-dettagli-prenotabile, [app-dettagli-prenotabile]',

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../_models';
-import { UserService } from '../../_services';
-
+import { User } from 'src/app/_models';
+import { UserService } from 'src/app/_services';
 
 @Component({
   selector: 'app-user-view',
@@ -21,7 +20,7 @@ export class UserViewComponent implements OnInit {
     this.loadAllUsers();
   }
 
-  private loadAllUsers() {
+  loadAllUsers() {
     this.userService.getAll().subscribe(utenti => {
       this.listaUtenti = utenti;
     });

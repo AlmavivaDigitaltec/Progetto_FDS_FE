@@ -1,4 +1,6 @@
+<div style="font-family: Tahoma; padding: 10px;  overflow-x:auto;">
 <h3>Lista Prenotabili</h3>
+
 <button class="btn btn-success" style="margin-bottom: 1em">Aggiungi Prenotabile</button>
 <table class="text-center">
     <thead>
@@ -9,8 +11,8 @@
             <th>Data Fine</th>
             <th>Ora Inizio</th>          
             <th>Ora Fine</th>          
-            <th>modifica</th>
-            <th>elimina</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     
@@ -18,3 +20,4 @@
         <tr app-dettagli-prenotabile *ngFor="let p of listaPrenotabili" [prenotabile]='p'></tr>
     </tbody>    
 </table>
+</div>

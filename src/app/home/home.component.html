@@ -1,3 +1,4 @@
+<div style="overflow-x:auto">
 <h1 style="font-family: Tahoma">Ciao {{currentUser.nome}}!</h1>
 <p style="font-family: Tahoma">Gestisci le tue Prenotazioni</p>
 <h3 style="font-family: Tahoma">Prenotazioni:</h3>
@@ -14,26 +15,36 @@
 </div>
 -->
 
-<table style="font-family: Tahoma">
-    <thead class="text-center">
-        <tr>                
-            <th>ID Prenotazione</th>
-            <th>Matricola Utente</th>
-            <th>Codice Prenotabile</th>
-            <th>Data Prenotazione</th>
-            <th>Ora Inizio</th>
-            <th>Ora Fine</th>
-        </tr>
-    </thead>
+<div class="container">
+    <div class="row">
+         <div class="col-md-12" style="display:inline-table;">
+            <table class = "usertable" style="font-family: Tahoma;">
+                <thead>
+                 <tr>                
+                        <th>ID Prenotazione</th>
+                        <th>Matricola Utente</th>
+                        <th>Codice Prenotabile</th>
+                        <th>Data Prenotazione</th>
+                        <th>Ora Inizio</th>
+                        <th>Ora Fine</th>
+                    </tr>
+                </thead>
     
-    <tbody class="text-center">
-        <tr app-dettagli-prenotazioni *ngFor="let p of prenotazioni" [prenotazione]='p'></tr>
-    </tbody>
+        <tbody>
+            <tr app-dettagli-prenotazioni *ngFor="let p of prenotazioni" [prenotazione]='p'></tr>
+        </tbody>
     
-</table>
-   
-<div>
-    <button type="button" class="button btn-danger" (click)='deleteAllPrenotazioni()'>Cancella Tutto</button>
+        </table>
+    </div>
 </div>
 
-<p><a [routerLink]="['/login']">Logout</a></p> 
+
+</div>
+<div style="margin-top: 10px;">
+    <button type="button" class="btn btn-danger" (click)='deleteAllPrenotazioni()' style ="margin-top: 10px">Cancella Tutto</button>
+</div>
+
+
+
+<p><a [routerLink]="['/login']" class="btn btn-danger" style ="margin-top: 15px;" role="button" routerLinkActive="active">Logout</a></p> 
+</div>

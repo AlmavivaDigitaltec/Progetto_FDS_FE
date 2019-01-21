@@ -8,26 +8,54 @@
     background-size: contain;
 }
 
-.container{
-    padding-top: 0%;
-}
+
 table{
-    
+    width: auto;
     border: 3px solid black;
+    box-shadow: 10px 10px 5px #999;
 }
 
 th{
-    background-color: cyan;
-    color: black;
+    background-color:#4CAF50;
+    color: white;
+
 }
 
 td {
+    
     min-width: 6rem;
-    background-color: blueviolet;
+    background-color: whitesmoke;
     border: 1px solid black;
     text-align: center;
 }
 
 .h2 {
     font-family: Courier New;
+}
+
+.colonna{
+   max-height: 170px;
+}
+
+.mod{
+    background-color: transparent;
+    color: blue;
+    border: none;
+}
+
+.mod:hover {
+    background-color:transparent; /* Green */
+    color: lightgreen;
+  }
+
+.del{
+    background-color: transparent;
+    color: blue;
+    border: none;
+
+}
+
+.del:hover{
+    background-color:transparent; /* Green */
+    color: lightgreen;
 }

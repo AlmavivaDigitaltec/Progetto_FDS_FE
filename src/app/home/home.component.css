@@ -8,15 +8,20 @@
     box-shadow: 0 9px #999 !important;
   }
   
+  .btn:hover {background-color: #3e8e41!important}
+ 
   
-  .button:hover {background-color: #3e8e41}
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+  .btn:focus {
+    background-color: blue!important;
+    box-shadow: 0 5px #666!important;
     transform: translateY(3px);
   }
 
+  .btn:active {
+    background-color: blue!important;
+    box-shadow: 0 5px #666!important;
+    transform: translateY(3px);
+  }
   .text-center{
     width: auto;
     border-radius: 10px;

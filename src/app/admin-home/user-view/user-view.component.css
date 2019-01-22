@@ -2,18 +2,18 @@
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #4CAF50 !important;
   border: none;
   border-radius: 10px;
   box-shadow: 0 9px #999;
 }
 
+.btn:hover {background-color: #3e8e41!important}
 
-.button:hover {background-color: #3e8e41}
 
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+.btn:focus {
+  background-color: blue!important;
+  box-shadow: 0 5px #666!important;
   transform: translateY(3px);
 }
 

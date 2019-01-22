@@ -74,10 +74,4 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
-    
-    /*onKeyup() {
-
-        this.f.mail = this.f.mail.replace(/[^a-zA-Z-'\n\r.]+/g, '');
-        
-    }*/
 }

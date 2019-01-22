@@ -1,5 +1,5 @@
-﻿<h2>Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<h2>Crea Nuovo Utente</h2>
+<form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="matricola">Matricola</label>
         <input type="text" formControlName="matricola" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.matricola.errors }" />

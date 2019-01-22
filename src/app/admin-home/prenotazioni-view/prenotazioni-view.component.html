@@ -1,0 +1,20 @@
+<h3>Lista Prenotazioni</h3>
+<button class="btn btn-success">Aggiungi Prenotazione</button>
+<table>
+    <thead>
+        <tr>        
+            <th>ID Prenotazione</th>        
+            <th>Matricola Utente</th>
+            <th>Codice Prenotabile</th>
+            <th>Data</th>
+            <th>Ora Inizio</th>            
+            <th>Ora Fine</th>
+            <th>modifica</th>
+            <th>elimina</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr app-dettagli-prenotazione *ngFor="let p of listaPrenotazione" [prenotazione]='p'></tr>
+    </tbody>    
+</table>

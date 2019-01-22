@@ -1,31 +1,33 @@
 <div style="font-family: Tahoma; padding: 10px;  overflow-x:auto;">
     <h3>Lista Utenti</h3>
-    <div style="margin-bottom: 10px">
-       <button class="btn btn-success" style="margin-bottom: 10px" >Aggiungi Utente</button>
-    </div>
-    <div class="container">
-       <div class = "row">
-         <div class="tabella col-md-12" style="display: inline-table">
-            <table class="text-center">
-               <thead>
-                  <tr>
-                     <th>Matricola</th>
-                     <th>Nome</th>
-                     <th>Cognome</th>
-                     <th>Email</th>
-                     <th>Password</th>
-                     <th></th>
-                     <th></th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr app-dettagli-utente *ngFor="let u of listaUtenti" [utente]='u'
-                  (onDeleteUser) = "onDeleteUser($event)"></tr>
-               </tbody>
-            </table>
-         </div>
+    <div style="margin-bottom: 10px;">
+       <button [routerLink]="['create']" class="btn btn-success" style="margin-bottom: 10px">Aggiungi Utente</button>
+	</div>
+	
+	<router-outlet></router-outlet>
 
-       </div>
-    </div>
-    
- </div>
+   <div class="container">
+      <div class = "row">
+        <div class="tabella col-md-12" style="display: inline-table">
+           <table class="text-center">
+              <thead>
+                 <tr>
+                    <th>Matricola</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th></th>
+                    <th></th>
+                 </tr>
+              </thead>
+              <tbody>
+        <tr app-dettagli-utente *ngFor="let u of listaUtenti" [user]='u'></tr>
+	   </tbody>
+    </table>
+   </div>
+
+</div>
+</div>
+
+</div>

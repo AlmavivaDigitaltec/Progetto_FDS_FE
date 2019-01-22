@@ -1,50 +1,34 @@
 <div style="overflow-x:auto">
+
 <h1 style="font-family: Tahoma">Ciao {{currentUser.nome}}!</h1>
 <p style="font-family: Tahoma">Gestisci le tue Prenotazioni</p>
 <h3 style="font-family: Tahoma">Prenotazioni:</h3>
 
-<!--
-<ul>
-        <li *ngFor="let user of users">
-        {{currentUser.matricola}} ({{currentUser.nome}} {{currentUser.cognome}})
-        <a (click)="deleteUser(user.matricola)" class="text-danger">Delete</a> 
-    </li> 
-</ul>
-<div *ngFor="let user of users | async" style="width: 300px;">
-    <customer-details [customer]='customer'></customer-details>
-</div>
--->
-
 <div class="container">
     <div class="row">
          <div class="col-md-12" style="display:inline-table;">
-            <table class = "usertable" style="font-family: Tahoma;">
-                <thead>
-                 <tr>                
-                        <th>ID Prenotazione</th>
-                        <th>Matricola Utente</th>
-                        <th>Codice Prenotabile</th>
-                        <th>Data Prenotazione</th>
-                        <th>Ora Inizio</th>
-                        <th>Ora Fine</th>
-                    </tr>
-                </thead>
-    
-        <tbody>
-            <tr app-dettagli-prenotazioni *ngFor="let p of prenotazioni" [prenotazione]='p'></tr>
-        </tbody>
-    
-        </table>
+            <table style="font-family: Tahoma">
+            <thead class="text-center">
+                <tr>                
+                    <th>ID Prenotazione</th>
+                    <th>MAtricola Utente</th>
+                    <th>Codice Prenotabile</th>
+                    <th>Data Prenotazione</th>
+                    <th>Ora Inizio</th>
+                    <th>Ora Fine</th>
+                </tr>
+            </thead>
+
+            <tbody class="text-center">
+                <tr app-dettagli-prenotazioni *ngFor="let p of prenotazioni" [prenotazione]='p'></tr>
+            </tbody>    
+            </table>
+        </div>
+        </div>
+    </div>            
+   
+    <div style="margin-top: 10px;">
+        <button type="button" class="btn btn-danger" (click)='deleteAllPrenotazioni()'>Cancella Tutto</button>
     </div>
-</div>
 
-
-</div>
-<div style="margin-top: 10px;">
-    <button type="button" class="btn btn-danger" (click)='deleteAllPrenotazioni()' style ="margin-top: 10px">Cancella Tutto</button>
-</div>
-
-
-
-<p><a [routerLink]="['/login']" class="btn btn-danger" style ="margin-top: 15px;" role="button" routerLinkActive="active">Logout</a></p> 
-</div>
+<p><a [routerLink]="['/login']" class="btn btn-danger" style="margin-top: 15px;" role="button" routeLinkActive="active">Logout</a></p> 

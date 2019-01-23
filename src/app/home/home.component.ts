@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
             this.prenotazioni = pren;
         });
         */
-       this.prenotazioneService.getAll().subscribe(pren => {
+       this.prenotazioneService.getById(this.currentUser.matricola).subscribe(pren => {
            this.prenotazioni = pren;
        });
     }

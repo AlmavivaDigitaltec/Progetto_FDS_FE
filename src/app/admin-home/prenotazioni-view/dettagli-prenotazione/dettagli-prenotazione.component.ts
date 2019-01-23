@@ -10,6 +10,7 @@ import { PrenotazioniViewComponent } from '../prenotazioni-view.component';
   templateUrl: './dettagli-prenotazione.component.html',
   styleUrls: ['./dettagli-prenotazione.component.css']
 })
+
 export class DettagliPrenotazioneComponent implements OnInit {
   
   @Input() prenotazione: Prenotazione;

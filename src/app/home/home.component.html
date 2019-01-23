@@ -2,6 +2,9 @@
 
 <h1 style="font-family: Tahoma">Ciao {{currentUser.nome}}!</h1>
 <p style="font-family: Tahoma">Gestisci le tue Prenotazioni</p>
+<div style="margin-bottom: 10px;">
+    <button [routerLink]="['prenotazioniCreate']" class="btn btn-success" style="margin-bottom: 10px; margin-left: 16px;" role="button" routerLinkActive="active">Aggiungi Prenotazione</button>
+ </div>
 <h3 style="font-family: Tahoma">Prenotazioni:</h3>
 
 <div class="container">
@@ -11,7 +14,7 @@
             <thead class="text-center">
                 <tr>                
                     <th>ID Prenotazione</th>
-                    <th>MAtricola Utente</th>
+                    <th>Matricola Utente</th>
                     <th>Codice Prenotabile</th>
                     <th>Data Prenotazione</th>
                     <th>Ora Inizio</th>
@@ -28,7 +31,7 @@
     </div>            
    
     <div style="margin-top: 10px;">
-        <button type="button" class="btn btn-danger" (click)='deleteAllPrenotazioni()'>Cancella Tutto</button>
+        <button type="button" class="btn btn-danger" style="margin-bottom: 10px; margin-left: 16px;" (click)='deleteAllPrenotazioni()'>Cancella Tutto</button>
     </div>
 
-<p><a [routerLink]="['/login']" class="btn btn-danger" style="margin-top: 15px;" role="button" routeLinkActive="active">Logout</a></p> 
+<p><a [routerLink]="['/login']" class="btn btn-danger" style="margin-bottom: 10px; margin-left: 16px;" role="button" routeLinkActive="active">Logout</a></p> 

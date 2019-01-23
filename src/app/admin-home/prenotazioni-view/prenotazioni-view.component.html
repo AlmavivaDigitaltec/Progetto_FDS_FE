@@ -15,7 +15,20 @@
     </thead>
     
     <tbody>
-        <tr app-dettagli-prenotazione *ngFor="let p of listaPrenotazioni" [prenotazione]='p'></tr>
+        <tr *ngFor="let p of listaPrenotazioni" >
+                <td>{{p.id_p}}</td>
+                <td>{{p.utente}}</td>
+                <td>{{p.prenotabile}}</td>
+                <td>{{p.data_prenotazione}}</td>
+                <td>{{p.ora_inizio}}</td>
+                <td>{{p.ora_fine}}</td>
+                <td>
+                        <button class="mod btn-primary" (click)='updatePrenotazione()'><img src="./assets/img/modify.jpg"/></button>
+                    </td>
+                    <td>
+                        <button class="del btn-danger" (click)='deletePrenotazione(prenotazione)'><img src="./assets/img/delete.jpg"/></button>
+                    </td>
+        </tr>
     </tbody>    
 </table>
 </div>

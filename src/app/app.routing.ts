@@ -15,10 +15,21 @@ import { UpdateUserFormComponent } from './admin-home/user-view/update-user-form
 import { UpdatePrenotabileFormComponent } from './admin-home/prenotabili-view/update-prenotabile-form/update-prenotabile-form.component';
 import { DettagliUtenteComponent } from './admin-home/user-view/dettagli-utente/dettagli-utente.component';
 import { UpdatePrenotazioniFormComponent } from './admin-home/prenotazioni-view/update-prenotazioni-form/update-prenotazioni-form.component';
+import { PrenotazioniFormComponent } from './home/prenotazioni-form/prenotazioni-form.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'userHome', component: HomeComponent, canActivate: [AuthGuard] },
+    { 
+      path: 'userHome',
+      component: HomeComponent,
+      children: [
+        {
+          path: 'prenotazioniCreate',
+          component: PrenotazioniFormComponent
+        }
+      ] 
+    },
+    
     { 
       path: 'adminHome', 
       component: AdminHomeComponent, 
@@ -36,15 +47,14 @@ const appRoutes: Routes = [
           component: PrenotabiliViewComponent,
           children: [
             { path: 'create', component: PrenotabileFormComponent},
-            { path: 'update/:prenotabile', component: UpdatePrenotabileFormComponent},
+            { path: 'update/:prenotabile', component: UpdatePrenotabileFormComponent}
           ]
         },
         { 
           path: 'prenotazioni', 
           component: PrenotazioniViewComponent,
           children: [
-            { path: 'create', component: PrenotazioniViewComponent},
-            { path: 'update/:prenotazione', component: UpdatePrenotazioniFormComponent},
+            { path: 'update/:prenotazione', component: UpdatePrenotazioniFormComponent}
           ]
         }
       ]

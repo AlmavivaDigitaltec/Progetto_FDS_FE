@@ -38,24 +38,56 @@ td {
 }
 
 .mod{
+  border-color: transparent!important;
   background-color: transparent;
   color: blue;
   border: none;
+}
+.mod:active{
+  border-color: transparent!important;
+  border:none!important;
+  outline: none!important;
+  outline-style: none;
 }
 
 .mod:hover {
+  border-color: transparent!important;
   background-color:transparent; /* Green */
   color: lightgreen;
+  border: none;
 }
 
 .del{
+  border-color: transparent!important;
   background-color: transparent;
   color: blue;
   border: none;
 
 }
+.del:active{
+  border-color: transparent!important;
+  border:none!important;
+  outline: none!important;
+  outline-style: none;
+}
 
 .del:hover{
+  border-color: transparent!important;
   background-color:transparent; /* Green */
   color: lightgreen;
+  border:none;
+}
+
+.mod:focus{
+  border-color: transparent!important;
+  border:none!important;
+  outline: none!important;
+  outline-style: none;
+}
+
+.del:focus{
+  border-color: transparent!important;
+  border:none!important;
+  outline: none!important;
+  outline-style: none;
 }

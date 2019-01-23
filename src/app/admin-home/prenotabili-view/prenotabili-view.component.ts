@@ -18,7 +18,7 @@ export class PrenotabiliViewComponent implements OnInit {
     this.loadAllPrenotabili();
   }
 
-  private loadAllPrenotabili() {
+  loadAllPrenotabili() {
       this.prenotabileService.getAll().subscribe(pren => {
       this.listaPrenotabili = pren;
     });

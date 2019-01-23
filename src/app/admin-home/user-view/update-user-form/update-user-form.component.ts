@@ -1,10 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService, AlertService } from 'src/app/_services';
 import { UserViewComponent } from '../user-view.component';
-import { first, take, mergeMap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { first } from 'rxjs/operators';
 import { User } from 'src/app/_models';
 
 @Component({

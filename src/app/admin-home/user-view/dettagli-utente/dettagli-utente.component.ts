@@ -13,12 +13,15 @@ import { first } from 'rxjs/operators';
 export class DettagliUtenteComponent implements OnInit {
 
   @Input() user: User;
-  alertService: AlertService;
-  userViewComponent: UserViewComponent;
-  loading: boolean;
+  loading = false;
+
   //@Output() userDeleted = new EventEmitter();
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private alertService: AlertService,
+    private userViewComponent: UserViewComponent) { }
 
   ngOnInit() {
   }
@@ -26,26 +29,17 @@ export class DettagliUtenteComponent implements OnInit {
   updateUser() {
     //alert(this.user.nome);
     this.router.navigate(['adminHome/utenti/update', JSON.stringify(this.user)]);
-
   }
-
-  /*deleteUser() {
-    //alert(this.user.nome);
-    this.userService.delete(this.user).subscribe( data => {
-      this.alertService.success('Cancellazione effettuata!', true);
-      this.router.navigate(['adminHome/utenti']);
-      this.userViewComponent.loadAllUsers();
-    });
-  }*/
 
   deleteUser(){
     this.loading = true;
-        this.userService.delete(this.user).pipe(first())
-            .subscribe(
-                user => {
-                    this.alertService.success('Cancellazione effettuata!', true);
-                    this.router.navigate(['adminHome/utenti']);
-                    this.userViewComponent.loadAllUsers();
+    this.userService.delete(this.user).pipe(first())
+      .subscribe(
+          user => {
+                  this.alertService.success('Cancellazione effettuata!', true);
+                  this.router.navigate(['adminHome/utenti']);
+                  this.userViewComponent.loadAllUsers();
+
                 });
   }
 

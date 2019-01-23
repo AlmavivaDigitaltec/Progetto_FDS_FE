@@ -20,6 +20,7 @@ export class PrenotazioniViewComponent implements OnInit {
   loadAllPrenotazioni() {
     this.prenotazioneService.getAll().subscribe(pren => {
       this.listaPrenotazioni = pren;
+      alert(JSON.stringify(pren[1]));
     });
   }
 

@@ -1,5 +1,6 @@
 <h2>Crea Nuovo Prenotabile</h2>
 <form [formGroup]="createPrenotabileForm" (ngSubmit)="onSubmit()">
+   
     <div class="form-group">
         <label for="codice">Codice</label>
         <input type="text" formControlName="codice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.codice.errors }" />
@@ -15,41 +16,40 @@
         </div>
     </div>
 
-
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-    </mat-form-field>
-
-    <!--
     <div class="form-group">
-        <label for="cognome">Cognome</label>
-        <input type="text" formControlName="cognome" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cognome.errors }" />
-        <div *ngIf="submitted && f.cognome.errors" class="invalid-feedback">
-            <div *ngIf="f.cognome.errors.required">Cognome necessario</div>
+        <label for="data_inizio">Data Inizio</label>
+        <input type="text" formControlName="data_inizio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.data_inizio.errors }" />
+        <div *ngIf="submitted && f.data_inizio.errors" class="invalid-feedback">
+            <div *ngIf="f.data_inizio.errors.required">Data Inizio necessaria</div>
         </div>
     </div>
-    <div class="form-group">
-        <label for="mail">E-Mail</label>
-        <input type="text" formControlName="mail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mail.errors }" />
-        <div *ngIf="submitted && f.mail.errors" class="invalid-feedback">
-            <div *ngIf="f.mail.errors.required">E-Mail richiesta</div>
-        </div> 
-    </div>
-    
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password richiesta</div>
-            <div *ngIf="f.password.errors.minlength">Password deve essere di almeno 6 caratteri</div>
-        </div>
-    </div>
-    -->
 
     <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Registrati</button>
+        <label for="data_fine">Data Fine</label>
+        <input type="text" formControlName="data_fine" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.data_fine.errors }" />
+        <div *ngIf="submitted && f.data_fine.errors" class="invalid-feedback">
+            <div *ngIf="f.data_fine.errors.required">Data Fine necessaria</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ora_inizio">Ora Inizio</label>
+        <input type="text" formControlName="ora_inizio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ora_inizio.errors }" />
+        <div *ngIf="submitted && f.ora_inizio.errors" class="invalid-feedback">
+            <div *ngIf="f.ora_inizio.errors.required">Ora inizio necessaria</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ora_fine">Ora Fine</label>
+        <input type="text" formControlName="ora_fine" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ora_fine.errors }" />
+        <div *ngIf="submitted && f.ora_fine.errors" class="invalid-feedback">
+            <div *ngIf="f.ora_fine.errors.required">Ora Fine necessaria</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Inserisci Prenotabile</button>
         <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         <a [routerLink]="['/login']" class="btn btn-link">Indietro</a>
     </div>

@@ -32,6 +32,8 @@ import { MaterialModule } from './material/material.module';;
 import { UserFormComponent } from './admin-home/user-view/user-form/user-form.component'
 ;
 import { UpdateUserFormComponent } from './admin-home/user-view/update-user-form/update-user-form.component'
+;
+import { UpdatePrenotabileFormComponent } from './admin-home/prenotabili-view/update-prenotabile-form/update-prenotabile-form.component'
 
 @NgModule({
     imports: [
@@ -58,7 +60,8 @@ import { UpdateUserFormComponent } from './admin-home/user-view/update-user-form
         DettagliPrenotazioneComponent ,
         PrenotabileFormComponent ,
         UserFormComponent,
-        UpdateUserFormComponent],
+        UpdateUserFormComponent,
+        UpdatePrenotabileFormComponent],
     providers: [
         AuthGuard,
         AlertService,

@@ -1,6 +1,7 @@
+<div style="font-family: Tahoma; padding: 10px;  overflow-x:auto;">
 <h3>Lista Prenotazioni</h3>
-<button class="btn btn-success">Aggiungi Prenotazione</button>
-<table>
+<button [routerLink]="['create']" class="btn btn-success" style="margin-bottom: 1em">Aggiungi Prenotazione</button>
+<table class="text-center">
     <thead>
         <tr>        
             <th>ID Prenotazione</th>        
@@ -9,8 +10,8 @@
             <th>Data</th>
             <th>Ora Inizio</th>            
             <th>Ora Fine</th>
-            <th>modifica</th>
-            <th>elimina</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     
@@ -18,3 +19,4 @@
         <tr app-dettagli-prenotazione *ngFor="let p of listaPrenotazione" [prenotazione]='p'></tr>
     </tbody>    
 </table>
+</div>

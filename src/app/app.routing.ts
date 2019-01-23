@@ -14,6 +14,7 @@ import { UserFormComponent } from './admin-home/user-view/user-form/user-form.co
 import { UpdateUserFormComponent } from './admin-home/user-view/update-user-form/update-user-form.component';
 import { UpdatePrenotabileFormComponent } from './admin-home/prenotabili-view/update-prenotabile-form/update-prenotabile-form.component';
 import { DettagliUtenteComponent } from './admin-home/user-view/dettagli-utente/dettagli-utente.component';
+import { UpdatePrenotazioniFormComponent } from './admin-home/prenotazioni-view/update-prenotazioni-form/update-prenotazioni-form.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
           component: PrenotazioniViewComponent,
           children: [
             { path: 'create', component: PrenotazioniViewComponent},
-            { path: 'update', component: PrenotabiliViewComponent},
+            { path: 'update/:prenotazione', component: UpdatePrenotazioniFormComponent},
           ]
         }
       ]

@@ -10,9 +10,15 @@ export class PrenotazioneService {
 
   private url = 'http://localhost:8080';
 
+
+
   constructor(private http: HttpClient) { }
 
   getAll() {
     return this.http.get<Prenotazione[]>(this.url + '/admin/vediTuttePrenotazioni' );
+  }
+
+  update(prenotazione: Prenotazione) {
+    return this.http.put(`${this.url}/utente/modificaPrenotazione`, prenotazione);
   }
 }

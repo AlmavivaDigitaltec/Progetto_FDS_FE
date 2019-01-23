@@ -34,6 +34,8 @@ import { UserFormComponent } from './admin-home/user-view/user-form/user-form.co
 import { UpdateUserFormComponent } from './admin-home/user-view/update-user-form/update-user-form.component'
 ;
 import { UpdatePrenotabileFormComponent } from './admin-home/prenotabili-view/update-prenotabile-form/update-prenotabile-form.component'
+;
+import { UpdatePrenotazioniFormComponent } from './admin-home/prenotazioni-view/update-prenotazioni-form/update-prenotazioni-form.component'
 
 @NgModule({
     imports: [
@@ -61,7 +63,8 @@ import { UpdatePrenotabileFormComponent } from './admin-home/prenotabili-view/up
         PrenotabileFormComponent ,
         UserFormComponent,
         UpdateUserFormComponent,
-        UpdatePrenotabileFormComponent],
+        UpdatePrenotabileFormComponent,
+        UpdatePrenotazioniFormComponent],
     providers: [
         AuthGuard,
         AlertService,
